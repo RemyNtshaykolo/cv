@@ -13,4 +13,4 @@ tf-plan:
 	$(tf) plan
 
 tf-format:
-	$(tf) fmt -check
+	$(tf) fmt 
