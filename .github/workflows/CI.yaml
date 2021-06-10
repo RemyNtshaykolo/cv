@@ -43,8 +43,9 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
+      working-directory: .infra/terraform
       id: plan
-      run: make tf-plan 
+      run: plan -no-color
   
     - uses: actions/github-script@0.9.0
       if: github.event_name == 'pull_request'
