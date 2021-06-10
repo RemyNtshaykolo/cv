@@ -10,7 +10,7 @@ tf-validate:
 	$(tf) validate
 
 tf-plan:
-	$(tf) plan
+	$(tf) plan -no-color
 
 tf-format:
 	$(tf) fmt 
