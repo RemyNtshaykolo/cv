@@ -11,3 +11,6 @@ tf-validate:
 
 tf-plan:
 	$(tf) plan
+
+tf-format:
+	$(tf) fmt -check
