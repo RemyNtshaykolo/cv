@@ -35,6 +35,7 @@ jobs:
     - name: Terraform Validate
       id: validate
       run: make tf-validate -no-color
+      continue-on-error: true
 
     - name: Terraform Format
       id: fmt
@@ -43,7 +44,7 @@ jobs:
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       id: plan
-      run: make tf-plan -no-color
+      run: make tf-plan 
   
     - uses: actions/github-script@0.9.0
       if: github.event_name == 'pull_request'
