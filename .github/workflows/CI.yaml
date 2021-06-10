@@ -50,7 +50,7 @@ jobs:
     - name: tf-plan mise en forme
       id: plan-format
       env:
-        PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"gpush
+        PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
       run: |
         const output = `#### Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
         #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
