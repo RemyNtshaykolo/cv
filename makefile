@@ -9,5 +9,20 @@ tf-init:
 tf-validate:
 	$(tf) validate
 
+tf-validate-no-color:
+	$(tf) validate -no-color
+
 tf-plan:
 	$(tf) plan
+
+tf-plan-no-color:
+	$(tf) plan -no-color
+
+tf-format:
+	$(tf) fmt 
+
+tf-apply:
+	$(tf) apply
+
+tf-apply-auto-approve:
+	$(tf) apply -auto-approve 
