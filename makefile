@@ -9,6 +9,9 @@ tf-init:
 tf-validate:
 	$(tf) validate
 
+tf-validate-no-color:
+	$(tf) validate -no-color
+
 tf-plan:
 	$(tf) plan
 

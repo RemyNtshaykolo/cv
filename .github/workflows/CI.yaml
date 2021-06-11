@@ -37,7 +37,7 @@ jobs:
     
     - name: Terraform Validate
       id: validate
-      run: make tf-validate
+      run: make tf-validate-no-color
       continue-on-error: true
 
     - name: Terraform Format
@@ -63,10 +63,13 @@ jobs:
           #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
           #### Terraform Validation 🤖\`${{ steps.validate.outputs.stdout }}\`
 
-          <details><summary>Show Plan</summary>
+          <details>
+          
+          <summary>Show Plan</summary>
           \`\`\`\n
           ${process.env.PLAN}
           \`\`\`
+
           </details>
 
           *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`*`;
