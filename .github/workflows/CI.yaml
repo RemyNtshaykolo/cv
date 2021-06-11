@@ -63,9 +63,8 @@ jobs:
           #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
           #### Terraform Validation 🤖\`${{ steps.validate.outputs.stdout }}\`
 
-          <details>
-          
-          <summary>Show Plan</summary>
+          <details><summary>Show Plan</summary>
+
           \`\`\`\n
           ${process.env.PLAN}
           \`\`\`
@@ -80,7 +79,11 @@ jobs:
             repo: context.repo.repo,
             body: output
           })
-      
+
+    - name: Terraform Plan Status
+      if: steps.plan.outcome == 'failure'
+      run: exit 1
+
     - name: Terraform Apply
       if: github.ref == 'refs/heads/master' && github.event_name == 'push'
       run: make tf-apply-auto-approve
